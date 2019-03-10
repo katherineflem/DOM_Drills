@@ -4,12 +4,12 @@ window.addEventListener("DOMContentLoaded", function () {
     div.className = "header-container";
     document.body.appendChild(div);
 
-    let header = document.createElement("h1"); //created variable for h1 element
-    header.className = "h1";
-    header.id = "header"
-    let headerText = document.createTextNode("This is an h1"); //created variable for the text within h1
-    header.appendChild(headerText); //putting the text inside of the header
-    document.body.appendChild(header); //added the header to the body of the document
+    let header1 = document.createElement("h1"); //created variable for h1 element
+    header1.className = "h1";
+    header1.id = "header"
+    let header1Text = document.createTextNode("This is an h1"); //created variable for the text within h1
+    header1.appendChild(header1Text); //putting the text inside of the header
+    document.body.appendChild(header1); //added the header to the body of the document
 
     let header2 = document.createElement("h2")
     header2.className = "h2";
@@ -50,31 +50,65 @@ window.addEventListener("DOMContentLoaded", function () {
 
     let colors = ["red", "orange", "purple", "pink", "black", "gray", "blue", "yellow"]
 
-"h1".addEventListener("dblclick", getRandomColor)
 
+    header1.addEventListener("dblclick", function () {
+        let randomColor = colors[Math.floor(Math.random() * colors.length)];
+        header1.style.color = colors[randomColor]
+    })
 
-    for (let i = 0; i < x.length; i++) {
-        x[i].addEventListener("dblclick", getRandomColor);
+    header2.addEventListener("dblclick", function () {
+        let randomColor = colors[Math.floor(Math.random() * colors.length)];
+        header2.style.color = colors[randomColor]
+    })
 
-    }
+    header3.addEventListener("dblclick", function () {
+        let randomColor = colors[Math.floor((Math.random() * colors.length))]
+        header3.style.color = colors[randomColor]
+    })
 
-    function getRandomColor(event) {
-       var randomColor = colors[Math.floor(Math.random() * colors.length)];
-       return h1.style.color = colors[randomColor]
-    }
+    header4.addEventListener("dblclick", function () {
+        let randomColor = colors[Math.floor(Math.random() * colors.length)];
+        return header4.style.color = colors[randomColor]
+    });
 
+    header5.addEventListener("dblclick", function () {
+        let randomColor = colors[Math.floor(Math.random() * colors.length)];
+        header5.style.color = colors[randomColor]
+    });
 
+    header6.addEventListener("dblclick", function () {
+        let randomColor = colors[Math.floor(Math.random() * colors.length)];
+        header6.style.color = colors[randomColor]
+    })
     //create a double click event on each heading element that changes the color of the heading to one in the array when clicked.
 
+    //write function that inserts a list item, have the first item say "This is list item 1" and any subsequentlist item should have the number incremented by 1
+
+    let button = document.createElement("button")//create button
+    let btntext = document.createTextNode("click to add new list item")//gave button text
+    button.className = "newitem" //gave button className
+    button.appendChild(btntext);//connected text to button
+    document.body.appendChild(button);//connected button to document body
+
+    button.style.borderColor = "blue" //styled button so you can see it better
+
+    //created a click event so when the button is clicked the insert item function runs
+    var number = 1 //assigned variable called number with value of 1 -function will have this increase by 1 
 
 
-
-
-
-
-
-
-
-
-
-}); 
+    function insertItem() {
+        let list = document.createElement("li"); //create a list item
+        let itemtxt = document.createTextNode("this is list item" + number);//give the item this text
+        number++ //increase the number by 1 with each click
+        list.appendChild(itemtxt); //connect item text to list
+        document.body.appendChild(list); //connect list to document body
+    }
+    //created a click event so when the button is clicked the insert item function runs
+    button.addEventListener("click", insertItem); {
+        let randomColor = colors[Math.floor(Math.random() * colors.length)];
+        list.style.color = colors[randomColor]
+    }
+})
+list.addEventListener("dbl-click", function () {
+    document.body.removeChild(list);
+})
